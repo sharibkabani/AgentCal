@@ -4,6 +4,7 @@
 # Token files (sensitive)
 token.json
 .gcp-saved-tokens.json
+credentials.json
 
 # Logs
 *.log
