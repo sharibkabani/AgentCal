@@ -1,0 +1,10 @@
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+fastapi
+uvicorn[standard] 
+python-dateutil 
+email-validator
+python-dotenv
+fastmcp
+requests
