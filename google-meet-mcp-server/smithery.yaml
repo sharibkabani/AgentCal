@@ -1,0 +1,33 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - googleMeetCredentialsPath
+      - googleMeetTokenPath
+    properties:
+      googleMeetCredentialsPath:
+        type: string
+        default: credentials.json
+        description: Path to Google Meet credentials file.
+      googleMeetTokenPath:
+        type: string
+        default: token.json
+        description: Path to Google Meet token file.
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['src/index.js'],
+      env: {
+        GOOGLE_MEET_CREDENTIALS_PATH: config.googleMeetCredentialsPath,
+        GOOGLE_MEET_TOKEN_PATH: config.googleMeetTokenPath
+      }
+    })
+  exampleConfig:
+    googleMeetCredentialsPath: credentials.json
+    googleMeetTokenPath: token.json

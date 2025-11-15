@@ -1,0 +1,23 @@
+services:
+  google-meet-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: google-meet-mcp
+    environment:
+      - GOOGLE_MEET_CREDENTIALS_PATH=/app/credentials.json
+      - GOOGLE_MEET_TOKEN_PATH=/app/token.json
+    volumes:
+      # Mount source code for development
+      - ./src:/app/src
+      # Mount credentials and token
+      - ./token.json:/app/token.json
+      - ./credentials.json:/app/credentials.json
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
+

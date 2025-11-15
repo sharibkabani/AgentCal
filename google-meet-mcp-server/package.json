@@ -1,0 +1,26 @@
+{
+  "name": "google-meet-mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server for interacting with Google Meet through the Google Calendar API",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "setup": "node src/setup.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "google-meet",
+    "calendar",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "dotenv": "^17.2.3",
+    "googleapis": "^126.0.0",
+    "open": "^9.1.0"
+  }
+}
